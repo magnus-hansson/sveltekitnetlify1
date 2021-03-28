@@ -1,15 +1,23 @@
-<!-- <script context="module" ✂prettier:content✂="CglleHBvcnQgYXN5bmMgZnVuY3Rpb24gbG9hZCh7IGZldGNoIH0pIHsKCQljb25zdCByZXMgPSBhd2FpdCBmZXRjaCgnL3N0YXRpc3RpY3MnKTsKCQljb25zdCBqc29uID0gYXdhaXQgcmVzLmpzb24oKTsKCQljb25zb2xlLmxvZyh7IHN0YXRzOiBqc29uIH0pOwoJCXJldHVybiB7IHByb3BzOiB7IHN0YXRzOiBqc29uIH0gfTsKCX0K">{}</script> -->
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('/statistics');
+		const json = await res.json();
+		console.log({ stats: json });
+		return { props: { stats: json } };
+	}
+</script>
+
 <script>
-	//export let stats = {};
+	export let stats = {};
 </script>
 
 <main>
 	<h1>Hello world!</h1>
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
-	<!-- <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+	<h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
 		{stats.users[0].username}
-	</h2> -->
+	</h2>
 </main>
 
 <style>
