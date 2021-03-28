@@ -2,13 +2,24 @@
 	export async function load({ fetch }) {
 		const res = await fetch('/users');
 		const json = await res.json();
-		console.log({ stats: json });
+
 		return { props: { stats: json } };
 	}
 </script>
 
 <script>
 	export let stats = {};
+	let users = [];
+	async function readdata() {
+		try {
+			const res = await fetch('/users');
+			const json = await res.json();
+			users = json.users;
+			console.log(users);
+		} catch (err) {
+			console.log(err);
+		}
+	}
 </script>
 
 <main>
@@ -18,6 +29,10 @@
 	<h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
 		{stats.users.length}
 	</h2>
+	<button on:click={readdata}>read data</button>
+	{#each users as user}
+		<ul><li>{user.username}</li></ul>
+	{/each}
 </main>
 
 <style>

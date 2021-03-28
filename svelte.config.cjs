@@ -8,7 +8,7 @@ module.exports = {
 		// By default, `npm run build` will create a standard Node app.
 		// You can create optimized builds for different platforms by
 		// specifying a different adapter
-		adapter: netlify(),
+		adapter: node(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
@@ -16,7 +16,8 @@ module.exports = {
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
-			}
+			},
+			hmr: { overlay: false }
 		}
 	}
 };
