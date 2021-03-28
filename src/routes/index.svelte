@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load({ fetch }) {
-		const res = await fetch('/statistics');
+		const res = await fetch('/users');
 		const json = await res.json();
 		console.log({ stats: json });
 		return { props: { stats: json } };
@@ -16,7 +16,7 @@
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 	<h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-		{stats.users[0].username}
+		{stats.users.length}
 	</h2>
 </main>
 
