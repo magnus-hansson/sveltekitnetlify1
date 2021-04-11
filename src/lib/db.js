@@ -1,5 +1,5 @@
-import pkg from 'mongodb';
-const { MongoClient } = pkg;
+//import pkg from 'mongodb';
+import { MongoClient } from 'mongodb';
 console.log(import.meta.env.VITE_MYVAR);
 if (!import.meta.env.VITE_MONGODB_URI) {
 	throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
