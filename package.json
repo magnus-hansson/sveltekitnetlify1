@@ -20,5 +20,9 @@
 	"type": "module",
 	"engines": {
 		"node": ">= 12.17.0"
+	},
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"mongodb": "^3.6.5"
 	}
 }
